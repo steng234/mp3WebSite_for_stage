@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>idk</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.6/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+<script src="https://kit.fontawesome.com/150c9382a0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="grid  gap-3 all w-full sm:grid-cols-none md:grid-cols-3">
+
+    <div>
+    </div>
+    <div > 
+
+
+      <div class=" items-center place-content-center allign all   ">
+
+        <div class="flex items-center justify-center ">
+          <ul id="imageList">
+            <li id="firList"style="display: inline-block;"  class="image" draggable="true">
+              <div id="firDivList"class="avatar  draggable-item h-12 w-12  md:h-14 md:w-14 lg:h-16 lg:w-16">
+                <div class="rounded-xl forTheSpace">
+                  <img class="imgToDrag" id="fir_image" src="live_forever.jpg" style="filter: blur(1px);" />
+                </div> 
+              </div>
+            </li>
+
+            <li id="secList" style="display: inline-block;"  class="image" draggable="true">
+              <div id="secDivList"class="avatar  draggable-item  h-10 w-10  md:h-12 md:w-12 lg:h-14 lg:w-14" >
+                <div class="rounded-xl forTheSpace">
+                  <img class="imgToDrag" id="sec_image" src="ultimo_mondo_cannibale.jpg"
+                    style="filter: blur(1px);" />
+                </div>
+              </div>
+            </li>
+
+            <li id="thiList"style="display: inline-block;"  class="image" draggable="true">
+              <div id="thiDivList"class="avatar  draggable-item h-8 w-8  md:h-10 md:w-10 lg:h-12 lg:w-12">
+                <div class="rounded-xl forTheSpace">
+                  <img class="imgToDrag" id="thi_image" src="note_killer.jpg" style="filter: blur(1px);" />
+                </div>
+              </div>
+            </li>
+
+            <li id="fouList"style="display: inline-block;"  class="image" draggable="true">
+              <div id="fouDivList"class="avatar draggable-item  h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10">
+                <div class=" rounded-xl forTheSpace">
+                  <img class="imgToDrag" id="fou_image" src="the_industry_dont_understand.jpg"
+                    style="filter: blur(1px);" />
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="avatar1 flex justify-center items-center"  >
+          <div class=" rounded-xl">
+            <img id="main_image" src="la_morte_di_rinquore.jpg" class="w-60 h-60 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-96 lg:h-96" />
+          </div>
+        </div>
+        <div style="margin: 2%;">
+          <h1 id="name_of_song" style="color: black; white-space: nowrap;" class="text-base sm:text-xl"></h1>
+          <h1 id="album_and_artist" style="color: black; white-space: nowrap;" class="text-xs sm:text-sm" ></h1>
+        </div>
+
+        <div class="container ">
+
+          <div class="element"><a id="skipBackButton" role="button" class="btn btn-circle glass btn-xs"style="font-size:2vw;"><i class="fa-solid fa-forward fa-flip-both fa-2xs"></i></a></div>
+          <div class="element"><a id="minusButton" role="button" class="btn btn-circle glass btn-xs"style="font-size:2vw;"><i class="fa-solid fa-minus fa-2xs"></i></a></div>
+
+          <div class="element">
+            <label class="btn btn-circle btn glass swap swap-rotate btn-xs" style="position: relative;">
+              <input id="cheky" type="checkbox" style="position: absolute;" />
+              <a id="play" role="button" class="btn btn-circle glass btn-xs swap-off fill-current" style="font-size:1.3vw;"><i class="fa-solid fa-pause fa-sm"></i></a>
+              <a id="stop"role="button" class="btn btn-circle glass btn-xs swap-on fill-current" style="font-size:2vw;"><i class="fa-solid fa-play fa-2xs"></i></i></a>
+            </label>
+          </div>
+
+          <div class="element"><a id="plusButton" role="button" class="btn glass btn-xs btn-circle"style="font-size:2vw;"><i class="fa-solid fa-plus fa-2xs"></i></a></div>
+          <div class="element"><a id="skipButton" role="button" class="btn glass btn-xs btn-circle"style="font-size:2vw;"><i class="fa-solid fa-forward fa-2xs"></i></a></div>
+
+        </div>
+
+        <div style="margin-top: 4%;">
+          <div id="baseProgressBar"class="relative h-1 bg-gray-200 ">
+            <div id="progressBar" class="h-full bg-black flex items-center " style="width:0%; ">
+              <div style="width:0%;" id="pointer">
+                <div id="audio-progress-handle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="flex justify-between text-xs font-semibold text-gray-500 px-4 py-2">
+          <div id="stateTime" style="font-size:2vw; color: black; margin-top: 2vw;">0:00</div>
+          <div id="totalTime"style="font-size:2vw; color: black; margin-top: 2vw;"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>  
+  </body>
+
+
+</html>
